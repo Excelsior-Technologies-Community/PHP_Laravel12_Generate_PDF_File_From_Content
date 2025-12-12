@@ -297,6 +297,11 @@ http://127.0.0.1:8000/generate-pdf
 
 This will generate and download generated_pdf.pdf. itsolutionstuff.com 
 
+you will download file as like bellow:
+
+<img width="1890" height="966" alt="Screenshot 2025-12-12 104025" src="https://github.com/user-attachments/assets/68fd6041-ae0e-499c-bbec-630d6b7571c8" />
+
+
  Optional Enhancements 
  ---
 
@@ -340,5 +345,7 @@ PHP_Laravel12_Generate_PDF_File_From_Content/
 ├── vite.config.js
 ├── artisan
 └── .env
+
+```
 
 
