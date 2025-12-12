@@ -7,13 +7,13 @@ barryvdh/laravel-dompdf
 
 You will build:
 ---
-✔ Laravel 12 project
-✔ DomPDF integration
-✔ Controller for PDF generation
-✔ Route
-✔ Blade template
-✔ Dynamic PDF (with user list)
-✔ PDF download / stream in browser
+ Laravel 12 project
+ DomPDF integration
+ Controller for PDF generation
+ Route
+ Blade template
+ Dynamic PDF (with user list)
+ PDF download / stream in browser
 
  Table of Contents
 ---
