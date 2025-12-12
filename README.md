@@ -140,21 +140,21 @@ class PDFController extends Controller
 Explanation (Controller) 
    use Barryvdh\DomPDF\Facade\Pdf
 
-     — Imports the PDF facade.
+   — Imports the PDF facade.
 
    GitHub  $users = User::get() 
 
-    — Gets all users from database (optional). 
+   — Gets all users from database (optional). 
     itsolutionstuff.com 
 
 
    Pdf::loadView() 
 
-    — Loads the Blade view and binds data.
+   — Loads the Blade view and binds data.
 
    GitHub  download()
 
-    — Sends file to browser for download.
+   — Sends file to browser for download.
 
 
 Step 5 — Add Route
