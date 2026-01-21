@@ -25,4 +25,5 @@ class PDFController extends Controller
         // Download the generated PDF
         return $pdf->download('generated_pdf.pdf');
     }
+    
 }
