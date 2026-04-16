@@ -3,26 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;     // Only if you want dynamic data
-use Barryvdh\DomPDF\Facade\Pdf; // PDF facade
+use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PDFController extends Controller
 {
-    public function generatePDF()
+    public function generatePDF(Request $request)
     {
-        // Dummy dynamic data example
-        $users = User::get(); // fetch user data
+        $query = User::query();
+
+        // FILTER (Search by name)
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        $users = $query->get();
 
         $data = [
-            'title' => 'Laravel 12 PDF Example',
+            'title' => 'Laravel 12 User Report',
             'date' => now()->format('d M Y'),
-            'users' => $users
+            'users' => $users,
+            'total' => $users->count()
         ];
 
-        // loadView — load a Blade view into PDF
         $pdf = Pdf::loadView('pdf.myPDF', $data);
 
-        // Download the generated PDF
-        return $pdf->download('generated_pdf.pdf');
+        // Dynamic File Name
+        $fileName = 'user_report';
+
+        if ($request->filled('search')) {
+            $fileName .= '_' . str_replace(' ', '_', $request->search);
+        }
+
+        $fileName .= '.pdf';
+
+        // 👁 Preview OR Download
+        if ($request->type == 'view') {
+            return $pdf->stream($fileName); // preview in browser
+        }
+
+        return $pdf->download($fileName); // download
     }
 }
