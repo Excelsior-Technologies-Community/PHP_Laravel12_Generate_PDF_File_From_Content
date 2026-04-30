@@ -55,16 +55,16 @@
 
         <form method="GET" action="/generate-pdf">
             
-            <input type="text" name="search" placeholder="Enter user name (optional)">
+            <input type="text" name="search" placeholder="Enter name or email (optional)">
+
+            <input type="password" name="pdf_password" placeholder="Set PDF Password (Default: 123456)">
 
             <br>
 
-            <!-- 👁 Preview -->
             <button type="submit" name="type" value="view" class="preview">
                 Preview PDF
             </button>
 
-            <!--  Download -->
             <button type="submit" class="download">
                 Download PDF
             </button>
